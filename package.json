@@ -1,0 +1,72 @@
+{
+  "name": "auggie-promptenhancer",
+  "displayName": "Auggie Prompt Enhancer",
+  "description": "Enhance your AI prompts with context-aware improvements using Augment SDK",
+  "version": "0.1.0",
+  "publisher": "AugieeCredit",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svsairevanth12/Auggie-Promptenahncer"
+  },
+  "homepage": "https://github.com/svsairevanth12/Auggie-Promptenahncer#readme",
+  "bugs": {
+    "url": "https://github.com/svsairevanth12/Auggie-Promptenahncer/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "prompt",
+    "ai",
+    "enhance",
+    "augment",
+    "gpt",
+    "copilot"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "promptEnhancer.enhance",
+        "title": "Enhance Prompt",
+        "category": "Prompt Enhancer",
+        "icon": "$(sparkle)"
+      }
+    ],
+    "configuration": {
+      "title": "Prompt Enhancer",
+      "properties": {
+        "promptEnhancer.showStatusBarButton": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the Enhance button in the status bar"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "watch": "npm run build -- --watch",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "@augmentcode/auggie-sdk": "^0.1.9"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.22.0",
+    "esbuild": "^0.27.2",
+    "typescript": "^5.3.0"
+  },
+  "license": "MIT"
+}
